@@ -1,0 +1,95 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-17T18:01:02.382Z",
+  "summary": "Diff adds a 3-screen frontend with fade transitions, Page 1 timed text + reveal (confetti/glow) + audio toggle, Page 2 newspaper-style report with flower reveal, and Page 3 wish page with petals + delayed gentle confetti. However, it also introduces Internet Identity/auth-related hooks (a non-goal), and several requested content/asset specifics cannot be confirmed or appear mismatched from the diff summary.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "Smooth fade/slide transitions between pages.",
+      "reason": "Navigation transition in App.tsx appears to be opacity-only (fade) with no evidence of a slide transition.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Page 2 must include the exact provided text content (including all specified lines/sections).",
+      "reason": "Page 2 includes some required fragments (e.g., \"Name: batak\", Charges list, Verdict/Punishment), but the BuildRequest requires the exact provided full text; the diff summary does not show a full match and indicates custom text content is used.",
+      "evidence": [
+        "frontend/src/pages/Page2Report.tsx"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "Page 3 must display the provided multi-paragraph wish text and bullet list with formatting preserved.",
+      "reason": "Page 3 contains a specific wish text and bullet list, but there is no evidence it matches the BuildRequest's provided text exactly; it appears to be custom copy.",
+      "evidence": [
+        "frontend/src/pages/Page3Wish.tsx"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "requirement": "Add generated static image assets (panda/flowers and sparkle/petal sprites) bundled in frontend static assets.",
+      "reason": "Components reference images under \"/assets/generated/...\", but the diff summary does not show the actual image files being added (and notes omitted files due to limits), so bundling cannot be verified from provided evidence.",
+      "evidence": [
+        "frontend/src/components/FlowerReveal.tsx",
+        "frontend/src/components/BackgroundLayers.tsx",
+        "frontend/src/components/PetalsLayer.tsx",
+        "frontend/src/components/BalloonsLayer.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Internet Identity authentication/provider and identity-aware actor creation via hooks.",
+      "reason": "BuildRequest explicitly lists authentication features (Internet Identity login flows) as non-goals, but the diff adds InternetIdentityProvider and related hooks and actor logic.",
+      "evidence": [
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "Footer attribution/link to caffeine.ai on Page 3.",
+      "reason": "Not requested in the BuildRequest; adds extra outbound link/attribution UI.",
+      "evidence": [
+        "frontend/src/pages/Page3Wish.tsx"
+      ]
+    },
+    {
+      "description": "Addition of an empty backend canister (actor {}).",
+      "reason": "BuildRequest focuses on a frontend interactive site and explicitly avoids backend state; adding a new backend main.mo is not requested by any requirement.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "confidence": 0.7,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/AudioToggle.tsx",
+    "frontend/src/components/BackgroundLayers.tsx",
+    "frontend/src/components/BalloonsLayer.tsx",
+    "frontend/src/components/ConfettiOverlay.tsx",
+    "frontend/src/components/FlowerReveal.tsx",
+    "frontend/src/components/GlowOverlay.tsx",
+    "frontend/src/components/NewspaperCard.tsx",
+    "frontend/src/components/PetalsLayer.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/Page1Entry.tsx",
+    "frontend/src/pages/Page2Report.tsx",
+    "frontend/src/pages/Page3Wish.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

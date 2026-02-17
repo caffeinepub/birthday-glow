@@ -1,0 +1,107 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Create a 3-page interactive Happy Birthday website with a playful, warm, slightly teasing tone; soft pink/peach/golden gradients; smooth transitions; animations (balloons, sparkles, petals, confetti on moments); and mobile-responsive navigation between pages.",
+  "architectural_notes": [
+    "Use a simple 3-section/page structure (multi-section single-page or 3 HTML pages) with Next/Previous navigation; ensure Previous is visible on pages 2 and 3 only.",
+    "Trigger confetti only on specified celebration moments (Page 1 reveal click; Page 3 after 3s) to match performance and tone.",
+    "All animations (balloons, sparkles, petals) should be subtle and mobile-friendly; respect prefers-reduced-motion where possible."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Cute panda holding a bouquet of flowers, clean vector-like style, pastel colors, transparent background (panda-flowers.dim_768x768.png)\n- Small sparkle particle sprite set, subtle golden-white sparkles on transparent background (sparkles-sprites.dim_512x512.png)\n- Soft flower petal sprite set, light pink/peach petals on transparent background (petals-sprites.dim_512x512.png)\n- Single balloon illustration (round balloon with string), pastel pink/peach on transparent background (balloon-single.dim_512x512.png)",
+  "existing_features": [
+    {
+      "id": "feature-implement-a-3-page-mobile-responsive-birthday-website-with-smooth-fade-slide-transitions-between-pages-and-clear-navigation-controls-page-1-shows-only-a-next-page-button-when-unlocked-pages-2-and-3-must-always-include-a-visible-previous-page-button-and-also-include-a-next-page-button-where-specified",
+      "title": "Implement a 3-page, mobile-responsive birthday website with smooth fade/slide transitions between pages and clear navigation controls: Page 1 shows only a “Next Page” button when unlocked; Pages 2 and 3 must always include a visible “Previous Page” button and also include a “Next Page” button where specified.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-the-global-visual-design-consistently-across-all-pages-soft-pink-peach-warm-golden-gradients-elegant-rounded-modern-typography-deep-black-readable-text-subtle-sparkles-floating-balloons-where-specified-and-confetti-used-only-during-celebration-moments",
+      "title": "Apply the global visual design consistently across all pages: soft pink/peach/warm-golden gradients, elegant rounded modern typography, deep black readable text, subtle sparkles, floating balloons (where specified), and confetti used only during celebration moments.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-page-1-grand-birthday-entry-with-a-soft-glowing-pink-peach-gradient-background-floating-balloons-that-slowly-move-upward-centered-text-that-starts-as-hey-you-nguess-what-day-it-is-and-automatically-fades-after-2-seconds-into-it-s-not-just-a-date-nit-s-a-national-level-event-a-large-button-labeled-reveal-the-birthday-girl-on-click-trigger-a-confetti-burst-and-a-brief-screen-glow-animation-then-reveal-the-message-happy-birthday-nto-someone-who-makes-ordinary-days-better-njust-by-existing-and-show-a-next-page-button",
+      "title": "Build Page 1 (“GRAND BIRTHDAY ENTRY”) with: a soft glowing pink-peach gradient background; floating balloons that slowly move upward; centered text that starts as “Hey You 🌸\\nGuess what day it is?” and automatically fades after 2 seconds into “It’s not just a date.\\nIt’s a national-level event.”; a large button labeled “Reveal the Birthday Girl 👀”. On click: trigger a confetti burst and a brief screen-glow animation, then reveal the message “Happy Birthday ✨\\nTo someone who makes ordinary days better\\njust by existing.” and show a “Next Page” button.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-optional-subtle-background-instrumental-birthday-music-on-page-1-with-safe-defaults-do-not-autoplay-audio-by-default-provide-a-small-unobtrusive-play-pause-control-so-users-can-opt-in-to-audio",
+      "title": "Add optional subtle background instrumental birthday music on Page 1 with safe defaults: do not autoplay audio by default; provide a small, unobtrusive play/pause control so users can opt-in to audio.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-page-2-official-birthday-report-with-a-cute-animated-newspaper-celebration-board-aesthetic-and-the-exact-provided-text-content-including-the-charges-bullet-list-and-verdict-punishment-lines-include-a-button-labeled-accept-birthday-flowers-that-when-clicked-reveals-a-cute-animated-panda-or-kitten-holding-flowers-and-shows-the-message-today-you-don-t-chase-goals-nyou-receive-flowers-include-previous-page-and-next-page-buttons",
+      "title": "Build Page 2 (“OFFICIAL BIRTHDAY REPORT”) with a cute animated newspaper/celebration-board aesthetic and the exact provided text content, including the “Charges” bullet list and “Verdict / Punishment” lines. Include a button labeled “Accept Birthday Flowers 🌷” that, when clicked, reveals a cute animated panda or kitten holding flowers and shows the message “Today, you don’t chase goals.\\nYou receive flowers.” Include “Previous Page” and “Next Page” buttons.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-page-3-soft-wish-page-with-a-warm-golden-pink-glow-theme-and-a-soft-falling-flower-petals-animation-display-the-provided-multi-paragraph-wish-text-and-bullet-list-after-3-seconds-on-the-page-trigger-a-gentle-confetti-fall-time-based-not-user-triggered-show-the-final-line-happy-birthday-nyou-re-appreciated-more-than-you-realize-and-end-with-a-softly-glowing-the-end-text-include-a-visible-previous-page-button",
+      "title": "Build Page 3 (“SOFT WISH PAGE”) with a warm golden-pink glow theme and a soft falling flower-petals animation. Display the provided multi-paragraph wish text and bullet list. After 3 seconds on the page, trigger a gentle confetti fall (time-based, not user-triggered). Show the final line “Happy Birthday.\\nYou’re appreciated more than you realize.” and end with a softly glowing “The End” text. Include a visible “Previous Page” button.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-generated-static-image-assets-for-the-panda-or-kitten-holding-flowers-reveal-page-2-and-any-small-sparkle-petal-sprites-used-for-animations-load-them-from-frontend-static-assets-not-from-the-backend",
+      "title": "Add generated static image assets for the “panda or kitten holding flowers” reveal (Page 2) and any small sparkle/petal sprites used for animations; load them from frontend static assets (not from the backend).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Build 3-page interactive Happy Birthday website with specified tone, global design (gradients, rounded fonts, readable black text), mobile responsiveness, and smooth fade/slide transitions",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement Page 1: animated gradient entry with floating balloons, timed text swap after 2s, reveal button triggering confetti + screen glow, then show birthday message and Next Page button (optional background instrumental music)",
+      "reqIds": [
+        "AR-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Implement Page 2: \"Official Birthday Report\" newspaper/celebration board layout with provided text, charges/verdict/punishment, and button that reveals animated panda/kitten holding flowers plus message; include Next/Previous navigation",
+      "reqIds": [
+        "AR-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Implement Page 3: soft wish page with warm golden-pink glow, falling flower petals animation, gentle confetti fall after 3s, final appreciation line, and end screen \"The End\"; include Previous navigation",
+      "reqIds": [
+        "AR-1"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Birthday Glow",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

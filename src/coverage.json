@@ -1,0 +1,253 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-17T18:01:02.385Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 7,
+    "implemented": 7,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Implement a 3-page, mobile-responsive birthday website with smooth fade/slide transitions between pages and clear navigation controls: Page 1 shows only a “Next Page” button when unlocked; Pages 2 and 3 must always include a visible “Previous Page” button and also include a “Next Page” button where specified.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/pages/Page1Entry.tsx",
+          "frontend/src/pages/Page2Report.tsx",
+          "frontend/src/pages/Page3Wish.tsx",
+          "frontend/src/components/NavControls.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/pages/Page1Entry.tsx",
+          "frontend/src/pages/Page2Report.tsx",
+          "frontend/src/pages/Page3Wish.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Apply the global visual design consistently across all pages: soft pink/peach/warm-golden gradients, elegant rounded modern typography, deep black readable text, subtle sparkles, floating balloons (where specified), and confetti used only during celebration moments.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/components/BackgroundLayers.tsx",
+          "frontend/src/components/ConfettiOverlay.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/components/BackgroundLayers.tsx",
+          "frontend/src/components/ConfettiOverlay.tsx"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Build Page 1 (“GRAND BIRTHDAY ENTRY”) with: a soft glowing pink-peach gradient background; floating balloons that slowly move upward; centered text that starts as “Hey You 🌸\\nGuess what day it is?” and automatically fades after 2 seconds into “It’s not just a date.\\nIt’s a national-level event.”; a large button labeled “Reveal the Birthday Girl 👀”. On click: trigger a confetti burst and a brief screen-glow animation, then reveal the message “Happy Birthday ✨\\nTo someone who makes ordinary days better\\njust by existing.” and show a “Next Page” button.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Page1Entry.tsx",
+          "frontend/src/components/BalloonsLayer.tsx",
+          "frontend/src/components/GlowOverlay.tsx",
+          "frontend/src/components/ConfettiOverlay.tsx",
+          "frontend/src/components/NavControls.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Page1Entry.tsx",
+          "frontend/src/components/BalloonsLayer.tsx",
+          "frontend/src/components/GlowOverlay.tsx",
+          "frontend/src/components/ConfettiOverlay.tsx"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Add optional subtle background instrumental birthday music on Page 1 with safe defaults: do not autoplay audio by default; provide a small, unobtrusive play/pause control so users can opt-in to audio.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/birthday-music.mp3",
+          "frontend/src/components/AudioToggle.tsx",
+          "frontend/src/pages/Page1Entry.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/AudioToggle.tsx",
+          "frontend/src/pages/Page1Entry.tsx"
+        ]
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Build Page 2 (“OFFICIAL BIRTHDAY REPORT”) with a cute animated newspaper/celebration-board aesthetic and the exact provided text content, including the “Charges” bullet list and “Verdict / Punishment” lines. Include a button labeled “Accept Birthday Flowers 🌷” that, when clicked, reveals a cute animated panda or kitten holding flowers and shows the message “Today, you don’t chase goals.\\nYou receive flowers.” Include “Previous Page” and “Next Page” buttons.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Page2Report.tsx",
+          "frontend/src/components/NewspaperCard.tsx",
+          "frontend/src/components/FlowerReveal.tsx",
+          "frontend/src/components/NavControls.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Page2Report.tsx",
+          "frontend/src/components/NewspaperCard.tsx",
+          "frontend/src/components/FlowerReveal.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Build Page 3 (“SOFT WISH PAGE”) with a warm golden-pink glow theme and a soft falling flower-petals animation. Display the provided multi-paragraph wish text and bullet list. After 3 seconds on the page, trigger a gentle confetti fall (time-based, not user-triggered). Show the final line “Happy Birthday.\\nYou’re appreciated more than you realize.” and end with a softly glowing “The End” text. Include a visible “Previous Page” button.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/Page3Wish.tsx",
+          "frontend/src/components/PetalsLayer.tsx",
+          "frontend/src/components/ConfettiOverlay.tsx",
+          "frontend/src/components/NavControls.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/Page3Wish.tsx",
+          "frontend/src/components/PetalsLayer.tsx",
+          "frontend/src/components/ConfettiOverlay.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Add generated static image assets for the “panda or kitten holding flowers” reveal (Page 2) and any small sparkle/petal sprites used for animations; load them from frontend static assets (not from the backend).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/generated/panda-flowers.dim_768x768.png",
+          "frontend/public/assets/generated/sparkles-sprites.dim_512x512.png",
+          "frontend/public/assets/generated/petals-sprites.dim_512x512.png",
+          "frontend/public/assets/generated/balloon-single.dim_512x512.png",
+          "frontend/src/components/BackgroundLayers.tsx",
+          "frontend/src/components/PetalsLayer.tsx",
+          "frontend/src/components/BalloonsLayer.tsx",
+          "frontend/src/components/FlowerReveal.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/public/assets/generated/panda-flowers.dim_768x768.png",
+          "frontend/public/assets/generated/sparkles-sprites.dim_512x512.png",
+          "frontend/public/assets/generated/petals-sprites.dim_512x512.png",
+          "frontend/public/assets/generated/balloon-single.dim_512x512.png",
+          "frontend/src/components/BackgroundLayers.tsx",
+          "frontend/src/components/PetalsLayer.tsx",
+          "frontend/src/components/BalloonsLayer.tsx",
+          "frontend/src/components/FlowerReveal.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/Dockerfile",
+    "build-template/LICENSE",
+    "build-template/README.md",
+    "build-template/deploy.sh",
+    "build-template/icp.yaml",
+    "build-template/package.json",
+    "build-template/pnpm-lock.yaml",
+    "build-template/pnpm-workspace.yaml",
+    "build-template/scripts/prune-unused-images.js",
+    "build-template/scripts/resize-images.js",
+    "build-template/src/backend/canister.yaml",
+    "build-template/src/backend/system-idl/aaaaa-aa.did",
+    "build-template/src/frontend/canister.yaml",
+    "build-template/src/frontend/components.json",
+    "build-template/src/frontend/env.json",
+    "build-template/src/frontend/eslint-rules/no-bigint-in-query-keys.js",
+    "build-template/src/frontend/eslint-rules/require-internet-identity-provider.js",
+    "build-template/src/frontend/eslint.config.js",
+    "build-template/src/frontend/package.json",
+    "build-template/src/frontend/postcss.config.js",
+    "build-template/src/frontend/src/components/ui/accordion.tsx",
+    "build-template/src/frontend/src/components/ui/alert-dialog.tsx",
+    "build-template/src/frontend/src/components/ui/alert.tsx",
+    "build-template/src/frontend/src/components/ui/aspect-ratio.tsx",
+    "build-template/src/frontend/src/components/ui/avatar.tsx",
+    "build-template/src/frontend/src/components/ui/badge.tsx",
+    "build-template/src/frontend/src/components/ui/breadcrumb.tsx",
+    "build-template/src/frontend/src/components/ui/button.tsx",
+    "build-template/src/frontend/src/components/ui/calendar.tsx",
+    "build-template/src/frontend/src/components/ui/card.tsx",
+    "build-template/src/frontend/src/components/ui/carousel.tsx",
+    "build-template/src/frontend/src/components/ui/chart.tsx",
+    "build-template/src/frontend/src/components/ui/checkbox.tsx",
+    "build-template/src/frontend/src/components/ui/collapsible.tsx",
+    "build-template/src/frontend/src/components/ui/command.tsx",
+    "build-template/src/frontend/src/components/ui/context-menu.tsx",
+    "build-template/src/frontend/src/components/ui/dialog.tsx",
+    "build-template/src/frontend/src/components/ui/drawer.tsx",
+    "build-template/src/frontend/src/components/ui/dropdown-menu.tsx",
+    "build-template/src/frontend/src/components/ui/form.tsx",
+    "build-template/src/frontend/src/components/ui/hover-card.tsx",
+    "build-template/src/frontend/src/components/ui/input-otp.tsx",
+    "build-template/src/frontend/src/components/ui/input.tsx",
+    "build-template/src/frontend/src/components/ui/label.tsx",
+    "build-template/src/frontend/src/components/ui/menubar.tsx",
+    "build-template/src/frontend/src/components/ui/navigation-menu.tsx",
+    "build-template/src/frontend/src/components/ui/pagination.tsx",
+    "build-template/src/frontend/src/components/ui/popover.tsx",
+    "build-template/src/frontend/src/components/ui/progress.tsx",
+    "build-template/src/frontend/src/components/ui/radio-group.tsx",
+    "build-template/src/frontend/src/components/ui/resizable.tsx",
+    "build-template/src/frontend/src/components/ui/scroll-area.tsx",
+    "build-template/src/frontend/src/components/ui/select.tsx",
+    "build-template/src/frontend/src/components/ui/separator.tsx",
+    "build-template/src/frontend/src/components/ui/sheet.tsx",
+    "build-template/src/frontend/src/components/ui/sidebar.tsx",
+    "build-template/src/frontend/src/components/ui/skeleton.tsx",
+    "build-template/src/frontend/src/components/ui/slider.tsx",
+    "build-template/src/frontend/src/components/ui/sonner.tsx",
+    "build-template/src/frontend/src/components/ui/switch.tsx",
+    "build-template/src/frontend/src/components/ui/table.tsx",
+    "build-template/src/frontend/src/components/ui/tabs.tsx",
+    "build-template/src/frontend/src/components/ui/textarea.tsx",
+    "build-template/src/frontend/src/components/ui/toggle-group.tsx",
+    "build-template/src/frontend/src/components/ui/toggle.tsx",
+    "build-template/src/frontend/src/components/ui/tooltip.tsx",
+    "build-template/src/frontend/src/hooks/use-mobile.tsx",
+    "build-template/src/frontend/src/lib/utils.ts",
+    "build-template/src/frontend/tsconfig.json",
+    "build-template/src/frontend/vite.config.js",
+    "build-template/tsconfig.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/public/assets/generated/balloon-single.dim_512x512.png",
+    "frontend/public/assets/generated/panda-flowers.dim_768x768.png",
+    "frontend/public/assets/generated/petals-sprites.dim_512x512.png",
+    "frontend/public/assets/generated/sparkles-sprites.dim_512x512.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/AudioToggle.tsx",
+    "frontend/src/components/BackgroundLayers.tsx",
+    "frontend/src/components/BalloonsLayer.tsx",
+    "frontend/src/components/ConfettiOverlay.tsx",
+    "frontend/src/components/FlowerReveal.tsx",
+    "frontend/src/components/GlowOverlay.tsx",
+    "frontend/src/components/NewspaperCard.tsx",
+    "frontend/src/components/PetalsLayer.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/Page1Entry.tsx",
+    "frontend/src/pages/Page2Report.tsx",
+    "frontend/src/pages/Page3Wish.tsx",
+    "frontend/src/ui-summary.json",
+    "frontend/src/utils/StorageClient.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Birthday Glow — 3-page animated birthday experience (frontend-only)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create exactly 3 navigable screens with mobile-responsive layout, animated fade/slide transitions, and correct Previous/Next controls per page.",
+      "acceptanceCriteria": [
+        "There are exactly 3 distinct pages/screens with route-based navigation (or equivalent) and animated transitions between them.",
+        "Page 1 does not show a “Previous Page” button.",
+        "Page 2 shows “Previous Page” and “Next Page” buttons.",
+        "Page 3 shows a “Previous Page” button; Page 3 does not require a “Next Page” button.",
+        "Layout adapts cleanly to common mobile widths (e.g., 360px) without overflowing text/buttons."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Implement the 3-screen navigation controller using hash-based navigation (or equivalent) with a shared layout wrapper and page transition orchestration (fade/slide) between Page 1, Page 2, and Page 3."
+        },
+        {
+          "path": "frontend/src/pages/Page1Entry.tsx",
+          "operation": "create",
+          "description": "Create Page 1 screen component with only the allowed navigation control behavior (no Previous; Next hidden until unlocked) and integrate with the app-level navigation API."
+        },
+        {
+          "path": "frontend/src/pages/Page2Report.tsx",
+          "operation": "create",
+          "description": "Create Page 2 screen component with always-visible Previous and Next buttons wired to app navigation."
+        },
+        {
+          "path": "frontend/src/pages/Page3Wish.tsx",
+          "operation": "create",
+          "description": "Create Page 3 screen component with always-visible Previous button wired to app navigation; omit Next button."
+        },
+        {
+          "path": "frontend/src/components/NavControls.tsx",
+          "operation": "create",
+          "description": "Add a reusable navigation controls component that enforces per-page button visibility rules and supports mobile-friendly sizing/tap targets. Use the shadcn-ui component set (e.g., its Button styles) for consistent controls; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Apply consistent global design: pink/peach/warm-golden gradients, rounded modern typography, deep black text, subtle sparkles/balloons where needed, and confetti only during celebration moments.",
+      "acceptanceCriteria": [
+        "All pages use gradient backgrounds in the specified palette and maintain high readability with deep black text.",
+        "Typography uses a rounded, modern style across headings/body and remains consistent between pages.",
+        "Sparkles are subtle and do not impair readability.",
+        "Confetti appears only on (a) Page 1 reveal click and (b) Page 3 gentle fall after the specified delay; no constant confetti background effect."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Define global typography (rounded modern fallback stack), deep-black readable text defaults, gradient background utility classes, and shared animation keyframes (fade/slide transitions, subtle sparkle drift)."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with the birthday gradient palette and custom keyframes/animations needed for fade/slide transitions, balloon float, sparkle shimmer, petal fall, and gentle glow accents."
+        },
+        {
+          "path": "frontend/src/components/BackgroundLayers.tsx",
+          "operation": "create",
+          "description": "Implement reusable decorative background layers (gradient base + subtle sparkles overlay) that can be toggled per page and parameterized for Page 1 vs Page 3 themes. Use the generated sprite asset frontend/public/assets/generated/sparkles-sprites.dim_512x512.png for subtle sparkles; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/ConfettiOverlay.tsx",
+          "operation": "create",
+          "description": "Implement an event-driven confetti overlay component (no continuous loop), with APIs to trigger a burst (Page 1) and a gentle timed fall (Page 3), ensuring it ends automatically."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Build Page 1 with timed text swap, floating balloons background, reveal button that triggers confetti + glow, then shows birthday message and unlocks Next Page.",
+      "acceptanceCriteria": [
+        "On Page 1 load, the first text is visible; at ~2 seconds it transitions (fade) to the second text.",
+        "Balloons animate upward continuously and subtly in the background.",
+        "Clicking “Reveal the Birthday Girl 👀” triggers a noticeable confetti burst and a short-lived glow overlay/animation.",
+        "After clicking, the birthday message appears and a “Next Page” button becomes visible and usable.",
+        "Confetti on Page 1 does not loop continuously; it is an event-based burst."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Page1Entry.tsx",
+          "operation": "modify",
+          "description": "Implement Page 1 content and behaviors: initial centered text, automatic fade-to-second-text at ~2s, large “Reveal the Birthday Girl 👀” action, on-click confetti burst + brief glow overlay, then reveal the birthday message and show the “Next Page” button."
+        },
+        {
+          "path": "frontend/src/components/BalloonsLayer.tsx",
+          "operation": "create",
+          "description": "Create a background balloons layer that continuously and subtly moves upward behind Page 1 content using the static asset frontend/public/assets/generated/balloon-single.dim_512x512.png (multiple instances with varied positions/scales)."
+        },
+        {
+          "path": "frontend/src/components/GlowOverlay.tsx",
+          "operation": "create",
+          "description": "Add a short-lived full-screen glow overlay/animation that Page 1 triggers after the reveal click (pink/peach glow) without blocking navigation after it ends."
+        },
+        {
+          "path": "frontend/src/components/ConfettiOverlay.tsx",
+          "operation": "modify",
+          "description": "Add a dedicated 'burst' trigger mode suitable for Page 1 (high-energy but brief) and ensure it never loops or persists as a background effect."
+        },
+        {
+          "path": "frontend/src/components/NavControls.tsx",
+          "operation": "modify",
+          "description": "Ensure Page 1 wiring supports the 'locked' state: no Previous button; Next button remains hidden until Page 1 is unlocked."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Add opt-in background instrumental music on Page 1 with a small play/pause control and no autoplay.",
+      "acceptanceCriteria": [
+        "A play/pause control is available on Page 1 to enable/disable background music.",
+        "Music is not audible until the user explicitly starts playback.",
+        "Playback can be paused/stopped by the user."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/birthday-music.mp3",
+          "operation": "create",
+          "description": "Add a bundled instrumental birthday music track to be used only as opt-in background audio (no autoplay)."
+        },
+        {
+          "path": "frontend/src/components/AudioToggle.tsx",
+          "operation": "create",
+          "description": "Implement a small unobtrusive play/pause control (with accessible labeling) that manages a single HTMLAudioElement and never starts playback until user interaction. Use shadcn-ui button styling (or equivalent) for the control; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/Page1Entry.tsx",
+          "operation": "modify",
+          "description": "Wire the AudioToggle into Page 1 layout and ensure audio defaults to paused on initial load; keep control unobtrusive and mobile-safe."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Build Page 2 with the provided exact report text, playful newspaper/board aesthetic, and a flowers button that reveals an animated panda/kitten-with-flowers plus message; include Previous/Next navigation.",
+      "acceptanceCriteria": [
+        "Page 2 displays the title and all specified lines/sections exactly as provided, including “Name: batak”.",
+        "The page styling reads like a playful newspaper/board (e.g., paper card, subtle grain, pinned-note feel, or animated accents).",
+        "Clicking “Accept Birthday Flowers 🌷” reveals the panda/kitten-with-flowers visual and plays a simple “pop-in”/bounce animation.",
+        "After clicking the button, the message “Today, you don’t chase goals. You receive flowers.” is visible under the visual.",
+        "“Previous Page” and “Next Page” navigation is visible and functional."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Page2Report.tsx",
+          "operation": "modify",
+          "description": "Implement Page 2 layout and exact text content (including Charges bullets and Verdict/Punishment lines) with a cute animated newspaper/celebration-board aesthetic and visible Previous/Next navigation."
+        },
+        {
+          "path": "frontend/src/components/NewspaperCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable 'paper/card' component with subtle grain/pinned-note accents and gentle motion cues for the Page 2 report presentation. Use shadcn-ui card-like primitives/styling where appropriate; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/FlowerReveal.tsx",
+          "operation": "create",
+          "description": "Implement the “Accept Birthday Flowers 🌷” interaction: on click, reveal the image frontend/public/assets/generated/panda-flowers.dim_768x768.png with a pop-in/bounce animation and then show the message “Today, you don’t chase goals.\\nYou receive flowers.”"
+        },
+        {
+          "path": "frontend/src/components/NavControls.tsx",
+          "operation": "modify",
+          "description": "Ensure Page 2 always renders both Previous and Next buttons, with consistent sizing and placement across mobile widths."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Build Page 3 with warm golden-pink glow, falling petals animation, timed gentle confetti fall after 3 seconds, provided wish text with bullets, “The End”, and Previous navigation.",
+      "acceptanceCriteria": [
+        "Flower petals continuously fall in a subtle loop behind the text without harming readability.",
+        "At ~3 seconds after Page 3 becomes visible, a gentle confetti fall starts and then ends (not infinite).",
+        "All provided text appears on Page 3 with line breaks and bullet list formatting preserved for readability.",
+        "A softly glowing “The End” text is visible at the end of the content.",
+        "A visible “Previous Page” button navigates back to Page 2."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Page3Wish.tsx",
+          "operation": "modify",
+          "description": "Implement Page 3 content with the provided multi-paragraph wish text (preserving line breaks and bullet list), final line, and softly glowing “The End” text; include visible Previous navigation back to Page 2."
+        },
+        {
+          "path": "frontend/src/components/PetalsLayer.tsx",
+          "operation": "create",
+          "description": "Create a subtle looping falling-petals background animation using the sprite set frontend/public/assets/generated/petals-sprites.dim_512x512.png, ensuring readability and performance on mobile."
+        },
+        {
+          "path": "frontend/src/components/ConfettiOverlay.tsx",
+          "operation": "modify",
+          "description": "Add a 'gentle fall' mode suitable for Page 3 and a timer-based trigger API so Page 3 can start confetti ~3 seconds after the page becomes visible and stop automatically."
+        },
+        {
+          "path": "frontend/src/components/NavControls.tsx",
+          "operation": "modify",
+          "description": "Ensure Page 3 renders only a Previous button (no Next required) and maintains consistent placement across screen sizes."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Bundle and wire generated static image assets for the panda-with-flowers reveal and sparkle/petal/balloon sprites; load all visuals from frontend static assets only.",
+      "acceptanceCriteria": [
+        "The panda/kitten holding flowers uses a bundled static image (or images) served from the frontend (e.g., under frontend/public/assets/generated).",
+        "If sprites are used for sparkles/petals, they are bundled as static assets and render correctly on all pages.",
+        "No backend calls are required for displaying these visuals."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/panda-flowers.dim_768x768.png",
+          "operation": "create",
+          "description": "Add the generated panda-with-flowers static image asset for Page 2 reveal."
+        },
+        {
+          "path": "frontend/public/assets/generated/sparkles-sprites.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated sparkle sprite set for subtle sparkle effects."
+        },
+        {
+          "path": "frontend/public/assets/generated/petals-sprites.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated petal sprite set for Page 3 falling petals animation."
+        },
+        {
+          "path": "frontend/public/assets/generated/balloon-single.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated single balloon illustration to be instanced for Page 1 floating balloons."
+        },
+        {
+          "path": "frontend/src/components/BackgroundLayers.tsx",
+          "operation": "modify",
+          "description": "Wire sparkle sprites from frontend/public/assets/generated/sparkles-sprites.dim_512x512.png into the subtle sparkle layer; ensure the effect remains subtle and readable."
+        },
+        {
+          "path": "frontend/src/components/PetalsLayer.tsx",
+          "operation": "modify",
+          "description": "Wire petals sprites from frontend/public/assets/generated/petals-sprites.dim_512x512.png into the falling petal animation."
+        },
+        {
+          "path": "frontend/src/components/BalloonsLayer.tsx",
+          "operation": "modify",
+          "description": "Wire the balloon asset frontend/public/assets/generated/balloon-single.dim_512x512.png into the floating balloons layer and confirm it renders correctly on all pages (where used)."
+        },
+        {
+          "path": "frontend/src/components/FlowerReveal.tsx",
+          "operation": "modify",
+          "description": "Ensure the reveal uses frontend/public/assets/generated/panda-flowers.dim_768x768.png and does not perform any backend calls for visuals."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-implement-a-3-page-mobile-responsive-birthday-website-with-smooth-fade-slide-transitions-between-pages-and-clear-navigation-controls-page-1-shows-only-a-next-page-button-when-unlocked-pages-2-and-3-must-always-include-a-visible-previous-page-button-and-also-include-a-next-page-button-where-specified",
+      "featureTitle": "Implement a 3-page, mobile-responsive birthday website with smooth fade/slide transitions between pages and clear navigation controls: Page 1 shows only a “Next Page” button when unlocked; Pages 2 and 3 must always include a visible “Previous Page” button and also include a “Next Page” button where specified.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/Page1Entry.tsx",
+        "frontend/src/pages/Page2Report.tsx",
+        "frontend/src/pages/Page3Wish.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-the-global-visual-design-consistently-across-all-pages-soft-pink-peach-warm-golden-gradients-elegant-rounded-modern-typography-deep-black-readable-text-subtle-sparkles-floating-balloons-where-specified-and-confetti-used-only-during-celebration-moments",
+      "featureTitle": "Apply the global visual design consistently across all pages: soft pink/peach/warm-golden gradients, elegant rounded modern typography, deep black readable text, subtle sparkles, floating balloons (where specified), and confetti used only during celebration moments.",
+      "files": [
+        "frontend/src/components/BackgroundLayers.tsx",
+        "frontend/src/components/ConfettiOverlay.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-page-1-grand-birthday-entry-with-a-soft-glowing-pink-peach-gradient-background-floating-balloons-that-slowly-move-upward-centered-text-that-starts-as-hey-you-nguess-what-day-it-is-and-automatically-fades-after-2-seconds-into-it-s-not-just-a-date-nit-s-a-national-level-event-a-large-button-labeled-reveal-the-birthday-girl-on-click-trigger-a-confetti-burst-and-a-brief-screen-glow-animation-then-reveal-the-message-happy-birthday-nto-someone-who-makes-ordinary-days-better-njust-by-existing-and-show-a-next-page-button",
+      "featureTitle": "Build Page 1 (“GRAND BIRTHDAY ENTRY”) with: a soft glowing pink-peach gradient background; floating balloons that slowly move upward; centered text that starts as “Hey You 🌸\\nGuess what day it is?” and automatically fades after 2 seconds into “It’s not just a date.\\nIt’s a national-level event.”; a large button labeled “Reveal the Birthday Girl 👀”. On click: trigger a confetti burst and a brief screen-glow animation, then reveal the message “Happy Birthday ✨\\nTo someone who makes ordinary days better\\njust by existing.” and show a “Next Page” button.",
+      "files": [
+        "frontend/src/components/BalloonsLayer.tsx",
+        "frontend/src/components/ConfettiOverlay.tsx",
+        "frontend/src/components/GlowOverlay.tsx",
+        "frontend/src/pages/Page1Entry.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-optional-subtle-background-instrumental-birthday-music-on-page-1-with-safe-defaults-do-not-autoplay-audio-by-default-provide-a-small-unobtrusive-play-pause-control-so-users-can-opt-in-to-audio",
+      "featureTitle": "Add optional subtle background instrumental birthday music on Page 1 with safe defaults: do not autoplay audio by default; provide a small, unobtrusive play/pause control so users can opt-in to audio.",
+      "files": [
+        "frontend/src/components/AudioToggle.tsx",
+        "frontend/src/pages/Page1Entry.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-page-2-official-birthday-report-with-a-cute-animated-newspaper-celebration-board-aesthetic-and-the-exact-provided-text-content-including-the-charges-bullet-list-and-verdict-punishment-lines-include-a-button-labeled-accept-birthday-flowers-that-when-clicked-reveals-a-cute-animated-panda-or-kitten-holding-flowers-and-shows-the-message-today-you-don-t-chase-goals-nyou-receive-flowers-include-previous-page-and-next-page-buttons",
+      "featureTitle": "Build Page 2 (“OFFICIAL BIRTHDAY REPORT”) with a cute animated newspaper/celebration-board aesthetic and the exact provided text content, including the “Charges” bullet list and “Verdict / Punishment” lines. Include a button labeled “Accept Birthday Flowers 🌷” that, when clicked, reveals a cute animated panda or kitten holding flowers and shows the message “Today, you don’t chase goals.\\nYou receive flowers.” Include “Previous Page” and “Next Page” buttons.",
+      "files": [
+        "frontend/src/components/FlowerReveal.tsx",
+        "frontend/src/components/NewspaperCard.tsx",
+        "frontend/src/pages/Page2Report.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-page-3-soft-wish-page-with-a-warm-golden-pink-glow-theme-and-a-soft-falling-flower-petals-animation-display-the-provided-multi-paragraph-wish-text-and-bullet-list-after-3-seconds-on-the-page-trigger-a-gentle-confetti-fall-time-based-not-user-triggered-show-the-final-line-happy-birthday-nyou-re-appreciated-more-than-you-realize-and-end-with-a-softly-glowing-the-end-text-include-a-visible-previous-page-button",
+      "featureTitle": "Build Page 3 (“SOFT WISH PAGE”) with a warm golden-pink glow theme and a soft falling flower-petals animation. Display the provided multi-paragraph wish text and bullet list. After 3 seconds on the page, trigger a gentle confetti fall (time-based, not user-triggered). Show the final line “Happy Birthday.\\nYou’re appreciated more than you realize.” and end with a softly glowing “The End” text. Include a visible “Previous Page” button.",
+      "files": [
+        "frontend/src/components/ConfettiOverlay.tsx",
+        "frontend/src/components/PetalsLayer.tsx",
+        "frontend/src/pages/Page3Wish.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-generated-static-image-assets-for-the-panda-or-kitten-holding-flowers-reveal-page-2-and-any-small-sparkle-petal-sprites-used-for-animations-load-them-from-frontend-static-assets-not-from-the-backend",
+      "featureTitle": "Add generated static image assets for the “panda or kitten holding flowers” reveal (Page 2) and any small sparkle/petal sprites used for animations; load them from frontend static assets (not from the backend).",
+      "files": [
+        "frontend/src/components/BackgroundLayers.tsx",
+        "frontend/src/components/BalloonsLayer.tsx",
+        "frontend/src/components/FlowerReveal.tsx",
+        "frontend/src/components/PetalsLayer.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

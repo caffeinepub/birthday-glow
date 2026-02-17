@@ -1,0 +1,188 @@
+{
+  "kind": "build_request",
+  "title": "3-page interactive Happy Birthday website with animations and playful tone",
+  "projectName": "Birthday Glow",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Implement a 3-page, mobile-responsive birthday website with smooth fade/slide transitions between pages and clear navigation controls: Page 1 shows only a “Next Page” button when unlocked; Pages 2 and 3 must always include a visible “Previous Page” button and also include a “Next Page” button where specified.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a 3-page interactive Happy Birthday website.",
+          "Smooth fade/slide transitions.",
+          "Mobile responsive layout.",
+          "Each page must include a visible “Previous Page” button (except Page 1)."
+        ]
+      },
+      "acceptanceCriteria": [
+        "There are exactly 3 distinct pages/screens with route-based navigation (or equivalent) and animated transitions between them.",
+        "Page 1 does not show a “Previous Page” button.",
+        "Page 2 shows “Previous Page” and “Next Page” buttons.",
+        "Page 3 shows a “Previous Page” button; Page 3 does not require a “Next Page” button.",
+        "Layout adapts cleanly to common mobile widths (e.g., 360px) without overflowing text/buttons."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Apply the global visual design consistently across all pages: soft pink/peach/warm-golden gradients, elegant rounded modern typography, deep black readable text, subtle sparkles, floating balloons (where specified), and confetti used only during celebration moments.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "GLOBAL DESIGN:\n\n• Soft pink, peach, and warm golden gradients.\n• Elegant rounded modern fonts.\n• Deep black readable text.\n• Smooth fade/slide transitions.\n• Floating balloons and subtle sparkles.\n• Confetti only on celebration moments."
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages use gradient backgrounds in the specified palette and maintain high readability with deep black text.",
+        "Typography uses a rounded, modern style across headings/body and remains consistent between pages.",
+        "Sparkles are subtle and do not impair readability.",
+        "Confetti appears only on (a) Page 1 reveal click and (b) Page 3 gentle fall after the specified delay; no constant confetti background effect."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build Page 1 (“GRAND BIRTHDAY ENTRY”) with: a soft glowing pink-peach gradient background; floating balloons that slowly move upward; centered text that starts as “Hey You 🌸\\nGuess what day it is?” and automatically fades after 2 seconds into “It’s not just a date.\\nIt’s a national-level event.”; a large button labeled “Reveal the Birthday Girl 👀”. On click: trigger a confetti burst and a brief screen-glow animation, then reveal the message “Happy Birthday ✨\\nTo someone who makes ordinary days better\\njust by existing.” and show a “Next Page” button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "PAGE 1 – GRAND BIRTHDAY ENTRY 🎉",
+          "Center text:\n\n“Hey You 🌸  \nGuess what day it is?”\n\nAfter 2 seconds, text fades into:\n\n“It’s not just a date.  \nIt’s a national-level event.”",
+          "Big Button:\n“Reveal the Birthday Girl 👀”",
+          "When clicked:\nConfetti burst.\nScreen glow animation.\n\nThen show:\n\n“Happy Birthday ✨  \nTo someone who makes ordinary days better  \njust by existing.”\n\nShow “Next Page” button."
+        ]
+      },
+      "acceptanceCriteria": [
+        "On Page 1 load, the first text is visible; at ~2 seconds it transitions (fade) to the second text.",
+        "Balloons animate upward continuously and subtly in the background.",
+        "Clicking “Reveal the Birthday Girl 👀” triggers a noticeable confetti burst and a short-lived glow overlay/animation.",
+        "After clicking, the birthday message appears and a “Next Page” button becomes visible and usable.",
+        "Confetti on Page 1 does not loop continuously; it is an event-based burst."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add optional subtle background instrumental birthday music on Page 1 with safe defaults: do not autoplay audio by default; provide a small, unobtrusive play/pause control so users can opt-in to audio.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Subtle background instrumental birthday music (optional)."
+        ]
+      },
+      "acceptanceCriteria": [
+        "A play/pause control is available on Page 1 to enable/disable background music.",
+        "Music is not audible until the user explicitly starts playback.",
+        "Playback can be paused/stopped by the user."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Build Page 2 (“OFFICIAL BIRTHDAY REPORT”) with a cute animated newspaper/celebration-board aesthetic and the exact provided text content, including the “Charges” bullet list and “Verdict / Punishment” lines. Include a button labeled “Accept Birthday Flowers 🌷” that, when clicked, reveals a cute animated panda or kitten holding flowers and shows the message “Today, you don’t chase goals.\\nYou receive flowers.” Include “Previous Page” and “Next Page” buttons.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "PAGE 2 – OFFICIAL BIRTHDAY REPORT 📰",
+          "Theme:\nCute animated newspaper or celebration board aesthetic.",
+          "Title:\n\n🎂 OFFICIAL BIRTHDAY REPORT 🎂",
+          "Name: batak  \nStatus: Another year cooler.  \nEnergy Level: Dangerous Cute.  \nAchievement Unlocked: Level Up.",
+          "Witness Statement:\n“She didn’t even try.  \nShe just kept being effortlessly nice.”",
+          "Charges:\n• Stealing smiles\n• Being calm but powerful\n• Existing with too much grace\n\nVerdict:\nGuilty.\n\nPunishment:\nMust smile extra today.",
+          "Button:\n“Accept Birthday Flowers 🌷”\n\nWhen clicked:\nCute animated panda or kitten appears holding flowers.\n\nMessage below:\n\n“Today, you don’t chase goals.  \nYou receive flowers.”\n\nShow “Next Page” button."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Page 2 displays the title and all specified lines/sections exactly as provided, including “Name: batak”.",
+        "The page styling reads like a playful newspaper/board (e.g., paper card, subtle grain, pinned-note feel, or animated accents).",
+        "Clicking “Accept Birthday Flowers 🌷” reveals the panda/kitten-with-flowers visual and plays a simple “pop-in”/bounce animation.",
+        "After clicking the button, the message “Today, you don’t chase goals. You receive flowers.” is visible under the visual.",
+        "“Previous Page” and “Next Page” navigation is visible and functional."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Build Page 3 (“SOFT WISH PAGE”) with a warm golden-pink glow theme and a soft falling flower-petals animation. Display the provided multi-paragraph wish text and bullet list. After 3 seconds on the page, trigger a gentle confetti fall (time-based, not user-triggered). Show the final line “Happy Birthday.\\nYou’re appreciated more than you realize.” and end with a softly glowing “The End” text. Include a visible “Previous Page” button.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "PAGE 3 – SOFT WISH PAGE 🌸",
+          "Theme:\nWarm golden-pink glow.\nSoft falling flower petals animation.",
+          "Text:\n\n“Birthdays are strange.\n\nThey don’t just count years.\nThey remind us how lucky the world was\nthe day you arrived.\n\nMay this year bring:\n• Peace in your heart\n• Confidence in your steps\n• Success in your goals\n• And small moments that make you quietly happy\n\nKeep being kind.\nKeep being steady.\nKeep being you.\n\nThat’s more than enough.”\n\nAfter 3 seconds:\nGentle confetti fall.\n\nFinal line:\n\n“Happy Birthday.\nYou’re appreciated more than you realize.”\n\nEnd screen with:\nSoft glowing “The End” text."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Flower petals continuously fall in a subtle loop behind the text without harming readability.",
+        "At ~3 seconds after Page 3 becomes visible, a gentle confetti fall starts and then ends (not infinite).",
+        "All provided text appears on Page 3 with line breaks and bullet list formatting preserved for readability.",
+        "A softly glowing “The End” text is visible at the end of the content.",
+        "A visible “Previous Page” button navigates back to Page 2."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Add generated static image assets for the “panda or kitten holding flowers” reveal (Page 2) and any small sparkle/petal sprites used for animations; load them from frontend static assets (not from the backend).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "When clicked:\nCute animated panda or kitten appears holding flowers.",
+          "Floating balloons and subtle sparkles.",
+          "Soft falling flower petals animation."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The panda/kitten holding flowers uses a bundled static image (or images) served from the frontend (e.g., under frontend/public/assets/generated).",
+        "If sprites are used for sparkles/petals, they are bundled as static assets and render correctly on all pages.",
+        "No backend calls are required for displaying these visuals."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit any files under the immutable frontend paths listed in SYSTEM_CONTEXT (compose existing UI components instead).",
+    "Keep all functionality within the existing single-actor backend architecture; do not introduce additional backend services.",
+    "Do not autoplay audio without explicit user interaction."
+  ],
+  "nonGoals": [
+    "User accounts, Internet Identity login flows, or any authentication features.",
+    "Persisting user data or storing page state in the backend.",
+    "Real-time communication features (e.g., chat, websockets)."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Cute panda holding a bouquet of flowers, clean vector-like style, pastel colors, transparent background (panda-flowers.dim_768x768.png)",
+      "Small sparkle particle sprite set, subtle golden-white sparkles on transparent background (sparkles-sprites.dim_512x512.png)",
+      "Soft flower petal sprite set, light pink/peach petals on transparent background (petals-sprites.dim_512x512.png)",
+      "Single balloon illustration (round balloon with string), pastel pink/peach on transparent background (balloon-single.dim_512x512.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

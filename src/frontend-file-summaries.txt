@@ -1,0 +1,17 @@
+{
+  "frontend/src/App.tsx": "Main application component managing 3-page navigation state with smooth fade transitions between birthday pages and unlock logic for Page 1.",
+  "frontend/src/pages/Page1Entry.tsx": "Page 1 component with timed text transitions, floating balloons, reveal button triggering confetti/glow effects, and birthday message with Next button unlock.",
+  "frontend/src/pages/Page2Report.tsx": "Page 2 component displaying the official birthday report in a newspaper-style card with flower reveal interaction and Previous/Next navigation.",
+  "frontend/src/pages/Page3Wish.tsx": "Page 3 component showing the final birthday wish with falling petals, timed gentle confetti, and \"The End\" message with footer attribution.",
+  "frontend/src/components/BalloonsLayer.tsx": "Background layer component rendering multiple floating balloons that continuously animate upward with randomized positions and timing.",
+  "frontend/src/components/BackgroundLayers.tsx": "Reusable background decoration component displaying subtle sparkle sprites with drift animations.",
+  "frontend/src/components/PetalsLayer.tsx": "Background layer component rendering falling flower petals with continuous looping animation and randomized properties.",
+  "frontend/src/components/ConfettiOverlay.tsx": "Event-driven confetti overlay component supporting both burst and gentle fall modes with auto-cleanup.",
+  "frontend/src/components/GlowOverlay.tsx": "Full-screen glow effect overlay component with pink/rose gradient pulse animation for celebration moments.",
+  "frontend/src/components/NewspaperCard.tsx": "Decorative card wrapper component with paper texture, subtle grain effect, and playful newspaper/board aesthetic.",
+  "frontend/src/components/FlowerReveal.tsx": "Animated reveal component displaying panda with flowers image and accompanying message with pop-in animation.",
+  "frontend/src/components/AudioToggle.tsx": "Optional background music control component with play/pause toggle button and no autoplay.",
+  "frontend/src/index.css": "Global styles defining OKLCH color system, custom birthday gradient backgrounds, rounded typography (Quicksand/Nunito), and all animation keyframes.",
+  "frontend/tailwind.config.js": "Tailwind configuration with extended theme for birthday color palette and custom animation utilities.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as project is frontend-only with no backend queries required."
+}
